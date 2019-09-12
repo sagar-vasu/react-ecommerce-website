@@ -1,0 +1,216 @@
+/* Using the ITCSS (http://itcss.io/) architecture for CSS */
+
+
+/* 1. Settings - Preprocessors variables, fonts, imports, etc. */
+
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/* 2. Tools - mixins */
+
+
+/* 3. Generic - very generic CSS rules */
+
+* {
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-size: 14px;
+}
+
+::selection{background-color: white;}
+
+i {
+  font-size: 20px;
+}
+
+
+/* 4. Elements - HTML Elements of the page h1-h6, etc. */
+
+
+
+a {
+  color: #235ba8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input {}
+
+input:focus {}
+
+input[type="submit"],
+input[type="button"] {}
+
+
+
+
+
+
+
+
+.pop-up-wrapper {
+ 
+  display: block;
+  margin: 20px auto;
+  width: auto;
+  position: relative;
+}
+
+.pop-up-wrapper {
+  background-color: white;
+  display: block;
+  padding: 50px;
+}
+
+.go-back {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color:#222;
+  width: 0;
+  height: 0;
+  border-top: 60px solid #CAE00D;
+  border-right: 60px solid transparent;
+}
+
+.go-back i {
+  font-size:20px;
+  position: relative;
+  top: -52px;
+  left: 10px;
+}
+
+.product-details {
+  max-width: 600px;
+}
+
+.product-left {
+  display: inline-block;
+  padding-right: 4%;
+  vertical-align: top;
+  width: 46%;
+}
+
+.product-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+
+.product-bottom{border-top:1px solid #ccc; position:relative; padding-top:20px;}
+
+@media (max-width:650px){
+  .product-left, .product-right, .product-bottom{
+    width:100%;}
+  .product-left{padding-right:0;}
+  .product-info{display:inline-block; width:60%; vertical-align:top;}
+   .product-image{display:inline-block; width:39%; vertical-align:top;}
+}
+
+@media (max-width:512px){
+  .product-info, .product-image{width:100%;}
+}
+
+.product-manufacturer {
+  color:#222;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 1;
+  margin: -2px;
+}
+
+.product-title {
+  font-size: 28px;
+  color: #888;
+}
+
+.product-price {
+  color:#222;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.product-price-cents {
+  text-decoration: underline;
+  vertical-align: top;
+  padding-left:3px;
+}
+
+.product-image {
+  padding: 10px 10px 0 10px;
+}
+
+.product-image img {
+  width: 100%;
+    height: 100%;
+    object-fit: contain;
+    height: 295px;
+}
+
+.product-description {line-height:1.5;}
+
+.product-available {
+  margin-top: 25px;
+}
+
+.product-rating{
+  margin-top:25px;
+}
+
+i.fa-star{color:#aaa; display:inline-block;}
+i.fa-star.rating{color: rgb(232, 217, 31);}
+.product-rating-details{display:inline-block; padding-left: 10px;}
+@media(max-width:515px){
+  .product-rating-details{padding-left:0;}
+}
+.product-extended {
+  color: #235ba8;
+  padding-left: 5px;
+}
+.product-quantity{margin-top:25px;
+  margin-bottom:25px;}
+
+.product-checkout{position:absolute; left:0;font-size: 12px; text-transform: uppercase;}
+.product-checkout-actions{position:absolute; right:0;}
+.product-checkout-total, .product-checkout-total-amount{font-size: 20px; color: #C17A41;}
+.product-checkout-total * {display:inline-block;}
+.product-checkout-actions{}
+
+/* 6. Components - buttons, menus, images, etc. */
+.product-quantity-label{text-transform:uppercase;}
+.product-quantity *{display:inline-block;}
+
+#product-quantity-input{background-color: #eee;border: none; width:4.5em; text-align: center;}
+.product-quantity-subtract, .product-quantity-add{margin-left: 20px; padding-left:5px; padding-right: 5px;}
+.product-quantity-subtract{margin-right:20px;}
+
+
+.toast{
+  position: fixed;
+  top: -50px;
+  left: calc(50vw - 50px);
+  z-index:25;
+  padding:5px 10px;
+  border-radius: 15px;
+}
+
+.toast-success{
+  background-color: green;
+  color:white;
+  font-size: 9pt;
+}
+
+.toast-transition{
+  top: calc(50px);
+  transition:top 1s;
+}
+
+
+/* 7. Trumps - text helpers, often !important */
+
+.hidden {
+  display: none;
+}

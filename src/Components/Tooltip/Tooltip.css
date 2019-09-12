@@ -1,0 +1,12 @@
+.card {
+    font-size: 12px;
+  }
+  .card > .header {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .popup-content{
+    width: 270px !important
+  }
